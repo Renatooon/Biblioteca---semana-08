@@ -1,0 +1,23 @@
+<div class="container mt-4" style="max-width: 600px;">
+    <h2 class="text-center">Añadir Ejemplar</h2>
+    <form action="/ejemplares/add" method="POST">
+        <div class="form-group">
+            <label for="id_libro">Libro</label>
+            <select class="form-control" id="id_libro" name="id_libro" required>
+                {{#each libros}}
+                <option value="{{_id}}">{{titulo}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fecha_adquisicion">Fecha de Adquisición</label>
+            <input type="date" class="form-control" id="fecha_adquisicion" name="fecha_adquisicion" required>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado</label>
+            <input type="text" class="form-control" id="estado" name="estado" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='/ejemplares/list'">Cancelar</button>
+    </form>
+</div>
